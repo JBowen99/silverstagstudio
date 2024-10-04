@@ -55,21 +55,21 @@ const metadata = {
     subtitle="We handcraft modern, professional, and performant websites."
     items={[
       {
-        title: 'Astro + Tailwind CSS Integration',
+        title: 'Mobile First Design',
         description:
-          'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
+          'Built from the ground up with mobile in mind, our sites look great on mobile devices.',
         icon: 'tabler:device-mobile-heart',
       },
       {
-        title: 'Ready-to-use Components',
+        title: 'Responsive Design',
         description:
-          'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
+          'From desktops, to tablets, to phones, your website will fit screens of all sizes.',
         icon: 'tabler:screen-share',
       },
       {
-        title: 'Best Practices',
+        title: 'Optimized Pages',
         description:
-          'Creating secure, efficient, and user-friendly websites that deliver exceptional experiences and lasting value.',
+          'Our no-bloat designs lead to high scores when evaluated with website analysis tools.',
         icon: 'tabler:bolt',
       },
       {
@@ -113,6 +113,41 @@ const metadata = {
         title: 'Cross-browser compatibility',
         description:
           'Ensure your website looks and functions consistently across various web browsers and devices, delivering a seamless experience to all users.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
+      Gain a competitive advantage by incorporating industry leading practices
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-slate-200 rounded-xl mx-10 p-5 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    tagline=""
+    title="Why It Matters"
+    items={[
+      {
+        title: 'User Retention',
+        description: 'Faster websites lead to more users, traffic, and conversion rates',
+      },
+      {
+        title: 'Better SEO',
+        description:
+          'Rank higher in Google searches with a faster website',
+          icon: 'tabler:bulb',
+      },
+      {
+        title: 'Great Experience',
+        description:
+          'With a low load time, users are more likely to enjoy viewing your site',
       },
     ]}
     image={{
