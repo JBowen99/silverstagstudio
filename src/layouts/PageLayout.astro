@@ -7,25 +7,33 @@ import Announcement from '~/components/widgets/Announcement.astro';
 import { headerData, footerData } from '~/navigation';
 
 import type { MetaData } from '~/types';
+import FancyNavbar from '~/components/widgets/FancyNavbar.astro';
+import FooterFull from '~/components/widgets/FooterFull.astro';
 
 export interface Props {
   metadata?: MetaData;
 }
 
 const { metadata } = Astro.props;
+
+const links = [
+  { href: '/', text: 'Home' },
+  { href: '/about', text: 'About' },
+  { href: '/services', text: 'Services' },
+  { href: '/contact', text: 'Contact' },
+];
 ---
 
 <Layout metadata={metadata}>
-  <slot name="announcement">
-    <Announcement />
-  </slot>
   <slot name="header">
-    <Header {...headerData} isSticky showRssFeed showToggleTheme />
+    <!-- <Header {...headerData} isSticky showRssFeed showToggleTheme /> -->
+    <FancyNavbar companyName="Silver Stag Studios" logo="true" isSticky={true} layout="left" links={links} />
   </slot>
   <main>
     <slot />
   </main>
   <slot name="footer">
-    <Footer {...footerData} />
+    <!-- <Footer {...footerData} /> -->
+    <FooterFull />
   </slot>
 </Layout>
