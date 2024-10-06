@@ -22,8 +22,8 @@ module.exports = {
         cinzel: ['Cinzel Variable', 'serif'],
       },
       backgroundImage: {
-        'custom-svg': "url('/trees4.svg')",
-        'custom-svg2': "url('/trees5.svg')",
+        'custom-svg': "url('/trees4Optimized.svg')",
+        'custom-svg2': "url('/trees5Optimized.svg')",
       },
     },
   },
