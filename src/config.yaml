@@ -4,14 +4,14 @@ site:
   base: '/'
   trailingSlash: false
 
-  google-site-verification=cwiXDS4DChWFmGLEq-2qeaB-KhT_UOpYpayINuFicpw
+  googleSiteVerificationId: cwiXDS4DChWFmGLEq-2qeaB-KhT_UOpYpayINuFicpw
 
 # Default SEO metadata
 metadata:
   title:
     default: Silver Stag Studios
     template: '%s'
-  description: "Small Web Dev Business Building Modern Handcrafted Websites"
+  description: 'Small Web Dev Business Building Modern Handcrafted Websites'
   robots:
     index: true
     follow: true
