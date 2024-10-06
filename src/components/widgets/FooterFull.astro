@@ -2,21 +2,21 @@
 import { Icon } from 'astro-icon/components';
 ---
 
-<footer class="py-20 bg-slate-700">
-  <div class="flex flex-row justify-between px-10 text-center text-md text-slate-300">
+<footer class="py-20 bg-slate-700 dark:bg-slate-900">
+  <div class="flex flex-col md:flex-row justify-between px-10 text-center text-md text-slate-300">
     <p>
       Copyright © {new Date().getFullYear()} Silver Stag Studio. All rights reserved.
     </p>
     <p>
-      <div class="flex flex-row text-3xl space-x-5 pr-10">
-        <a href="instagram.com">
+      <div class="flex flex-row justify-center text-3xl space-x-5 pt-5 md:pt-0 md:pr-10">
+        <a href="https://instagram.com">
           <Icon name="tabler:brand-instagram" />
         </a>
         <a href="facebook.com">
           <Icon name="tabler:brand-facebook" />
         </a>
         <a href="instagram.com">
-          <Icon name="tabler:brand-twitter" />
+          <Icon name="tabler:brand-x" />
         </a>
       </div>
     </p>

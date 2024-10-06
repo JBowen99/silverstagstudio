@@ -3,6 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
+import Icon from 'node_modules/astro-icon/components/Icon.astro';
 
 const metadata = {
   title: 'Contact',
@@ -12,31 +13,66 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- HeroText Widget ******************* -->
 
-  <HeroText tagline="Contact" title="Let's Connect!" />
+  <div class="flex flex-col lg:flex-row w-full lg:px-20">
+    <div
+      class="lg:w-1/2 flex flex-col justify-center lg:justify-start items-center lg:items-start pt-20 md:px-10 space-y-10 text-base md:text-2xl"
+    >
+      <HeroText tagline="">
+        <Fragment slot="title">
+          <div class="text-4xl">Contact</div>
+        </Fragment>
 
-  <ContactUs
-    id="form"
-    title="Drop us a message today!"
-    subtitle="Have a question, a design idea, or just a general request? We'll try to respond within 24 hours!"
-    inputs={[
-      {
-        type: 'text',
-        name: 'name',
-        label: 'Name',
-      },
-      {
-        type: 'email',
-        name: 'email',
-        label: 'Email',
-      },
-    ]}
-    textarea={{
-      label: 'Message',
-    }}
-    disclaimer={{
-      label:
-        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
-    }}
-    description="Our support team typically responds within 24 business hours."
-  />
+        <Fragment slot="subtitle">
+          Send us an email with a description of the website you're looking for and we'll get back to you within 24
+          hours. You can also reach out by call/text or check out our socials.
+        </Fragment>
+      </HeroText>
+
+      <div class="flex flex-row space-x-3 text-nowrap justify-start items-center">
+        <Icon name="tabler:mail" />
+        <h1>: info@SilverStagStudios.com</h1>
+      </div>
+      <div class="flex flex-row space-x-3 text-nowrap justify-start items-center">
+        <Icon name="tabler:phone" />
+        <h1>: (720) 663-9089</h1>
+      </div>
+      <div class="flex flex-row justify-center text-xl md:text-3xl space-x-5 lg:pr-10">
+        <span class="text-base md:text-2xl">Socials :</span>
+        <a href="https://instagram.com">
+          <Icon name="tabler:brand-instagram" />
+        </a>
+        <a href="facebook.com">
+          <Icon name="tabler:brand-facebook" />
+        </a>
+        <a href="instagram.com">
+          <Icon name="tabler:brand-x" />
+        </a>
+      </div>
+    </div>
+    <ContactUs
+      id="form"
+      title=""
+      subtitle=""
+      inputs={[
+        {
+          type: 'text',
+          name: 'name',
+          label: 'Name',
+        },
+        {
+          type: 'email',
+          name: 'email',
+          label: 'Email',
+        },
+      ]}
+      textarea={{
+        label: 'Message',
+      }}
+      disclaimer={{
+        label:
+          'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
+      }}
+      description="Our support team typically responds within 24 business hours."
+    />
+  </div>
 </Layout>

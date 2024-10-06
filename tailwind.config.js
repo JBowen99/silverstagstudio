@@ -9,6 +9,9 @@ module.exports = {
         primary: 'var(--aw-color-primary)',
         secondary: 'var(--aw-color-secondary)',
         accent: 'var(--aw-color-accent)',
+        success: 'var(--aw-color-success)',
+        warning: 'var(--aw-color-warning)',
+
         default: 'var(--aw-color-text-default)',
         muted: 'var(--aw-color-text-muted)',
       },
@@ -17,6 +20,10 @@ module.exports = {
         serif: ['var(--aw-font-serif, ui-serif)', ...defaultTheme.fontFamily.serif],
         heading: ['var(--aw-font-heading, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
         cinzel: ['Cinzel Variable', 'serif'],
+      },
+      backgroundImage: {
+        'custom-svg': "url('./src/assets/trees4.svg')",
+        'custom-svg2': "url('./src/assets/trees5.svg')",
       },
     },
   },

@@ -1,20 +1,15 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import Hero from '~/components/widgets/Hero.astro';
-import Note from '~/components/widgets/Note.astro';
-import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
-import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
-import Image from 'astro/components/Image.astro';
+//import Image from 'astro/components/Image.astro';
+import Image from '~/components/common/Image.astro';
 
 import LogoImage from '~/assets/logo.svg';
+import PerformanceImage from '~/assets/images/performance.png';
 import HeroText from '~/components/widgets/HeroText.astro';
 import Button from '~/components/ui/Button.astro';
 
@@ -22,113 +17,115 @@ import '@fontsource-variable/cinzel';
 import FadeIn from '~/components/effects/FadeIn.astro';
 
 const metadata = {
-  title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
+  title: 'Silver Stag Studios - Building Modern Digital Legacies',
   ignoreTitleTemplate: true,
 };
+
+import TreesSVG from '~/assets/trees.svg';
+import Features from '~/components/widgets/Features.astro';
+import Features3 from '~/components/widgets/Features3.astro';
 ---
 
 <Layout metadata={metadata}>
-  <div class="flex justify-center mt-10">
-    <div class="w-1/3 flex justify-center">
-      <Image src={LogoImage} alt="Silver Stag Studios Logo" width={250} />
+  <div class="flex flex-col justify-center w-full">
+    <div class="text-red-500 bg-red-500">
+      <div
+        class="absolute inset-0 md:-bottom-32 bg-bottom bg-auto text-red-500 bg-custom-svg dark:bg-custom-svg2 opacity-100 z-[-1]"
+      >
+      </div>
+    </div>
+    <div class="relative z-10 p-4">
+      <div class="flex justify-center mt-10">
+        <div class="w-1/3 flex justify-center">
+          <Image src={LogoImage} alt="Silver Stag Studios Logo" width={250} />
+        </div>
+      </div>
+
+      <HeroText>
+        <Fragment slot="title">
+          <span class="font-cinzel drop-shadow-2xl text-5xl"
+            ><span class="text-slate-500">Silver</span> Stag Studios</span
+          >
+        </Fragment>
+
+        <Fragment slot="subtitle"><span class="text-lg font-light">Building Modern Digital Legacies </span></Fragment>
+      </HeroText>
+
+      <div class="flex flex-row justify-center space-x-3">
+        <Button text="Get Started" variant="secondary" class="bg-white dark:bg-transparent btn-shiny" href="/contact" />
+        <Button text="Learn More" variant="secondary" class="bg-white dark:bg-transparent btn-shiny" href="#features" />
+      </div>
     </div>
   </div>
 
-  <HeroText>
-    <Fragment slot="title">
-      <span class="font-cinzel text-5xl"><span class="text-slate-500">Silver</span> Stag Studios</span>
-    </Fragment>
-
-    <Fragment slot="subtitle"><span class="text-lg font-light">Building Modern Digital Legacies </span></Fragment>
-  </HeroText>
-
-  <div class="flex flex-row justify-center space-x-3">
-    <Button text="Get Started" variant="secondary" class="hover:bg-slate-400" href="/contact" />
-    <Button text="Learn More" variant="secondary" class="hover:bg-slate-400" href="#features" />
-  </div>
+  <br />
 
   <!-- Features2 Widget *************** -->
   <Features2
     id="features"
     tagline=""
     title="What We Do"
-    subtitle="We handcraft modern, professional, and performant websites."
+    subtitle="Our team handcrafts modern, professional, and performant websites."
     items={[
       {
         title: 'Mobile First Design',
-        description:
-          'Built from the ground up with mobile in mind, our sites look great on mobile devices.',
+        description: 'Built from the ground up with mobile in mind, our sites look great on all phones.',
         icon: 'tabler:device-mobile-heart',
       },
       {
         title: 'Responsive Design',
-        description:
-          'From desktops, to tablets, to phones, your website will fit screens of all sizes.',
+        description: 'From desktops, to tablets, to phones, your website will fit screens of all sizes.',
         icon: 'tabler:screen-share',
       },
       {
         title: 'Optimized Pages',
-        description:
-          'Our no-bloat designs lead to high scores when evaluated with website analysis tools.',
+        description: 'Our no-bloat designs lead to high scores when evaluated with website analysis tools.',
         icon: 'tabler:bolt',
-      },
-      {
-        title: 'Excellent Page Speed',
-        description:
-          'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
-        icon: 'tabler:rocket',
-      },
-      {
-        title: 'Search Engine Optimization (SEO)',
-        description:
-          "SEO lies in its ability to enhance a website's visibility, driving organic traffic and enabling it to reach a wider audience.",
-        icon: 'tabler:arrows-right-left',
-      },
-      {
-        title: 'Open to new ideas and contributions',
-        description:
-          'Embracing a culture that is open to new ideas and contributions is integral fostering innovation, collaboration, and a dynamic user experience.',
-        icon: 'tabler:bulb',
       },
     ]}
   />
 
   <!-- Content Widget **************** -->
 
-  <Content
-    isReversed
+  <Features
     tagline=""
     title="What We Offer"
     items={[
       {
         title: 'Custom Designed',
-        description: 'Each website is coded by hand, leading to unique designs and less bloat',
+        description:
+          'Each website is coded by hand, no web builders or WordPress, leading to unique designs and less bloat',
+        icon: 'tabler:check',
       },
       {
         title: 'Fast Pages',
-        description:
-          'No web builders or WordPress means no bloat. Our websites score 98-100/100 speed scores with Google',
+        description: 'Custom code means that our websites load quickly and score 95-100/100 when evaluated with Google',
+        icon: 'tabler:check',
       },
       {
         title: 'Cross-browser compatibility',
         description:
           'Ensure your website looks and functions consistently across various web browsers and devices, delivering a seamless experience to all users.',
+        icon: 'tabler:check',
+      },
+      {
+        title: 'Hosting and Support',
+        description: 'We can handle domain names, hosting, updates, and support. ',
+        icon: 'tabler:check',
       },
     ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Colorful Image',
-    }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
-      Gain a competitive advantage by incorporating industry leading practices
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Modern Businesses Need Modern Websites
+      </h3>
+      Stand out from competitors, gain new customers, and provide high quality experiences
     </Fragment>
 
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-slate-200 rounded-xl mx-10 p-5 dark:bg-transparent"></div>
+      <div class="absolute inset-0 shadow-lg rounded-xl mx-3 md:mx-10 mb-3 p-5 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Features>
 
   <Content
     tagline=""
@@ -137,46 +134,49 @@ const metadata = {
       {
         title: 'User Retention',
         description: 'Faster websites lead to more users, traffic, and conversion rates',
+        icon: 'tabler:users-group',
       },
       {
         title: 'Better SEO',
-        description:
-          'Rank higher in Google searches with a faster website',
-          icon: 'tabler:bulb',
+        description: 'Rank higher in Google searches with a faster website',
+        icon: 'tabler:trending-up',
       },
       {
         title: 'Great Experience',
-        description:
-          'With a low load time, users are more likely to enjoy viewing your site',
+        description: 'With a low load time, users are more likely to enjoy viewing your site',
+        icon: 'tabler:click',
       },
     ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Colorful Image',
-    }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
-      Gain a competitive advantage by incorporating industry leading practices
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Custom Websites Win</h3>
+      Stand out from competitors, gain new customers, and provide high quality experiences
     </Fragment>
 
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-slate-200 rounded-xl mx-10 p-5 dark:bg-transparent"></div>
+      <div class="absolute inset-0 shadow-lg rounded-xl mx-3 md:mx-10 p-5 dark:bg-transparent"></div>
+    </Fragment>
+
+    <Fragment slot="image">
+      <Image
+        src={PerformanceImage}
+        class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
+        width={350}
+        height={400}
+        widths={[800]}
+        alt="Website Performance"
+        layout="cover"
+      />
     </Fragment>
   </Content>
 
   <!-- CallToAction Widget *********** -->
   <FadeIn delay={300}>
-    <CallToAction
-      actions={[
-        {
-          variant: 'primary',
-          text: 'Contact Us',
-          href: '/contact',
-          icon: 'tabler:mail',
-        },
-      ]}
-    >
+    <CallToAction>
+      <Fragment slot="actions">
+        <Button class="btn-shiny" href="/contact">Contact Us</Button>
+      </Fragment>
+
       <Fragment slot="title">
         Interested in a better website?<br class="block sm:hidden" /><span class="sm:whitespace-nowrap"></span>
       </Fragment>

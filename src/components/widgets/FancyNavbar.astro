@@ -1,6 +1,8 @@
 ---
 import { Image } from 'astro:assets';
 import logoIcon from 'src/assets/logo.svg';
+import ToggleTheme from '../common/ToggleTheme.astro';
+import Icon from 'node_modules/astro-icon/components/Icon.astro';
 
 export interface Props {
   companyName?: string;
@@ -21,22 +23,30 @@ const layoutClasses = {
 const stickyClass = isSticky ? 'sticky top-0' : '';
 ---
 
-<nav class={`bg-slate-200 shadow-md ${stickyClass} z-50`}>
+<nav class={`bg-slate-200 dark:bg-slate-900 shadow-md ${stickyClass} z-50`}>
   <div class={`container mx-auto px-4 sm:px-6 lg:px-8`}>
     <div class={`flex items-center justify-between h-16 ${layoutClasses[layout]}`}>
       <div class="flex items-center">
         {logo && <Image src={logoIcon} alt="Company Logo" class="h-8 w-auto mr-3" />}
-        {companyName && <span class="text-xl font-semibold text-gray-800 font-cinzel">{companyName}</span>}
+        {
+          companyName && (
+            <span class="text-xl font-semibold text-gray-800 dark:text-gray-300 font-cinzel">{companyName}</span>
+          )
+        }
       </div>
       <div class="hidden md:block">
         <div class="ml-10 flex items-baseline space-x-4">
           {
             links.map((link) => (
-              <a href={link.href} class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
+              <a
+                href={link.href}
+                class="text-gray-600 dark:text-gray-300 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
+              >
                 {link.text}
               </a>
             ))
           }
+          <ToggleTheme iconClass="w-4 h-4 md:w-4 md:h-4 md:inline-block" />
         </div>
       </div>
       <div class="md:hidden">
@@ -46,10 +56,11 @@ const stickyClass = isSticky ? 'sticky top-0' : '';
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button> -->
+
         <!-- Dynamic Hamburger Menu Button -->
         <button
           type="button"
-          class="text-gray-600 hover:text-gray-900"
+          class="text-gray-600 dark:text-slate-300 hover:text-gray-900 mb-2"
           id="mobile-menu-button"
           aria-label="Toggle menu"
         >
@@ -63,7 +74,7 @@ const stickyClass = isSticky ? 'sticky top-0' : '';
     </div>
   </div>
 
-  <!-- Mobile menu, show/hide based on menu state -->
+  <!-- Static Mobile menu, show/hide based on menu state 
   <div class="md:hidden hidden" id="mobile-menu">
     <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
       {
@@ -78,6 +89,7 @@ const stickyClass = isSticky ? 'sticky top-0' : '';
       }
     </div>
   </div>
+  -->
 
   <!-- Mobile menu overlay -->
   <div
@@ -93,6 +105,11 @@ const stickyClass = isSticky ? 'sticky top-0' : '';
             </a>
           ))
         }
+        <h1 class="text-white hover:text-gray-200 px-3 py-2 rounded-md text-lg font-medium">
+          <button aria-label="light mode toggle" data-aw-toggle-color-scheme>
+            <Icon name="tabler:sun" />
+          </button>
+        </h1>
       </div>
     </div>
   </div>
@@ -101,7 +118,7 @@ const stickyClass = isSticky ? 'sticky top-0' : '';
 <style>
   #mobile-menu-button {
     position: relative;
-    z-index: 60;
+    z-index: 1000;
   }
   #mobile-menu-button.active span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);

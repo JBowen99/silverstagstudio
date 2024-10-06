@@ -139,9 +139,11 @@ export interface Item {
   classes?: Record<string, string>;
   callToAction?: CallToAction;
   image?: Image;
+  disabled?: boolean = false;
 }
 
 export interface Price {
+  isAvailable?: boolean = false;
   title?: string;
   subtitle?: string;
   description?: string;
@@ -182,7 +184,7 @@ export interface Disclaimer {
 
 // COMPONENTS
 export interface CallToAction extends Omit<HTMLAttributes<'a'>, 'slot'> {
-  variant?: 'primary' | 'secondary' | 'tertiary' | 'link';
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'success' | 'warning' | 'link';
   text?: string;
   icon?: string;
   classes?: Record<string, string>;

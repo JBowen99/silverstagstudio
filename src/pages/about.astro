@@ -1,7 +1,11 @@
 ---
+import FadeIn from '~/components/effects/FadeIn.astro';
+import Button from '~/components/ui/Button.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Hero from '~/components/widgets/Hero.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
@@ -13,22 +17,37 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
-
-  <Hero
-    tagline="About us"
-    image={{
-      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Caos Image',
-    }}
-  >
+  <HeroText tagline="">
     <Fragment slot="title">
-      We're a small web dev business <br />
-      <span class="text-accent dark:text-white highlight"> building beautiful websites</span>
+      <div class="text-4xl">About Us</div>
     </Fragment>
 
     <Fragment slot="subtitle">
-      No page builders, no WordPress, no shortcuts. We have a passion for 100% handcrafted websites, employing modern
-      coding standards, and creating fast and reponsive designs.
+      We're a <span class="text-accent">small web dev business</span> with a passion for <span class="text-accent"
+        >handcrafting websites.</span
+      >
+      <br /> No page builders, no WordPress, no shortcuts. We code 100% of our websites, employing <span
+        class="text-accent">modern</span
+      > coding standards, and creating <span class="text-accent">fast</span> and <span class="text-accent"
+        >reponsive</span
+      > designs.
     </Fragment>
-  </Hero>
+  </HeroText>
+
+  <!-- CallToAction Widget *********** -->
+  <FadeIn delay={300}>
+    <CallToAction>
+      <Fragment slot="actions">
+        <Button class="btn-shiny" href="/contact">Contact Us</Button>
+      </Fragment>
+
+      <Fragment slot="title">
+        Ready for the website you always wanted?<br class="block sm:hidden" /><span class="sm:whitespace-nowrap"></span>
+      </Fragment>
+
+      <Fragment slot="subtitle">
+        Let us know and get started now!<br class="hidden md:inline" />
+      </Fragment>
+    </CallToAction>
+  </FadeIn>
 </Layout>
