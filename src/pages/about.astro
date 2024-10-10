@@ -6,9 +6,14 @@ import Features2 from '~/components/widgets/Features2.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
+import ImageTextBlock from '~/components/widgets/ImageTextBlock.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
+
+import graciaImage from '~/assets/images/gracia.png';
+import tothetopImage from '~/assets/images/tothetop.png';
+import paintprosImage from '~/assets/images/paintpros.png';
 
 const metadata = {
   title: 'About us',
@@ -33,6 +38,50 @@ const metadata = {
       > designs.
     </Fragment>
   </HeroText>
+
+  <HeroText tagline="">
+    <Fragment slot="title">
+      <div class="text-4xl">Projects</div>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      We'll take on projects of all kinds, big or small. Check out some of our work below!
+    </Fragment>
+  </HeroText>
+
+  <div class="lg:px-40 lg:mb-10">
+    <FadeIn delay={300} direction="right">
+      <ImageTextBlock
+        title="Gracia Guatemala"
+        text="Built for a small nonprofit organiztion, this site was built in a day to provide a landing, catalog, and contact form"
+        imgsrc={graciaImage}
+        width="md:w-1/2"
+      />
+    </FadeIn>
+  </div>
+
+  <div class="lg:px-40">
+    <FadeIn delay={300} direction="left">
+      <ImageTextBlock
+        imgleft={false}
+        title="To The Top Indoor Climbing"
+        text="A indoor rock climbing landing page, built with an modern and creative design simulating a rock climbing wall on the front page"
+        imgsrc={tothetopImage}
+        width="md:w-1/2"
+      />
+    </FadeIn>
+  </div>
+
+  <div class="lg:px-40 lg:mb-10">
+    <FadeIn delay={300} direction="right">
+      <ImageTextBlock
+        title="Paint Pros"
+        text="A clean and modern website for a painting company, built with simplicity in mind"
+        imgsrc={paintprosImage}
+        width="md:w-1/2"
+      />
+    </FadeIn>
+  </div>
 
   <!-- CallToAction Widget *********** -->
   <FadeIn delay={300}>
