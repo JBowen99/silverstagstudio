@@ -1,13 +1,15 @@
 ---
 import { Icon } from 'astro-icon/components';
+import Button from '../ui/Button.astro';
 ---
 
 <footer class="py-20 bg-slate-700 dark:bg-slate-900">
   <div class="flex flex-col md:flex-row justify-between px-10 text-center text-md text-slate-300">
     <p>
-      Copyright © {new Date().getFullYear()} Silver Stag Studio. All rights reserved.
+      Copyright © {new Date().getFullYear()} Silver Stag Studios, LLC. All rights reserved.
     </p>
     <p>
+      <!-- 
       <div class="flex flex-row justify-center text-3xl space-x-5 pt-5 md:pt-0 md:pr-10">
         <a href="https://instagram.com">
           <Icon name="tabler:brand-instagram" />
@@ -19,6 +21,8 @@ import { Icon } from 'astro-icon/components';
           <Icon name="tabler:brand-x" />
         </a>
       </div>
+      -->
+      <Button variant="secondary" class="btn-shiny" href="/contact">Get Started!</Button>
     </p>
   </div>
 </footer>
